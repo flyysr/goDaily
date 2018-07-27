@@ -24,6 +24,9 @@
  $origin = $factory->create();
  $origin->say();
  /**
+ * @reference https://www.phptherightway.com/pages/Design-Patterns.html
+ * @reference https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm
+ *
  * This code uses a factory to create the Automobile object. 
  * There are two possible benefits to building your code this way; the first is that if you need to change, rename, 
  * or replace the Automobile class later on you can do so and you will only have to modify the code in the factory, 
