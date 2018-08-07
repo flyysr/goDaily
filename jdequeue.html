@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <script src="./js/jquery-1.10.2.js"></script>
+        <style>
+
+            div {
+                background: #aaa;
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="block1">aaa</div>
+        <script>
+            // $("#block1").animate({left: "+=100"}, function(){
+            //
+		     //    $("#block1").animate({left: "-=100"}, function(){
+		     //    	alert('stoped!');
+            //     });
+            //
+            // });
+            function next(){
+	            var action = actions[ idx++ ];
+	            action && action();
+            };
+
+            function first_async_action(f){
+	            console.log('first');
+            	// setTimeout(function () {
+		         //    console.log('first');
+		         //    next();
+	            // }, 1000)
+                f();
+
+            }
+            function second_async_action(f){
+	            console.log('second');
+	            f();
+
+            }
+            function third_async_action(f){
+	            console.log('third');
+	            f();
+
+            }
+            third_async_action(function(){
+            	second_async_action(function () {
+                    first_async_action(function () {
+                        alert('done');
+                    });
+	            })
+            })
+
+            // var idx = 0,
+	         //    actions = [
+		     //        function(){
+			 //            third_async_action( next );
+		     //        },
+		     //        function(){
+			 //            second_async_action( next );
+		     //        },
+		     //        function(){
+			 //            first_async_action( next );
+		     //        },
+            //
+		     //        function(){
+			 //            alert( 'done!' );
+		     //        }
+	         //    ];
+            //
+            // next();
+        </script>
+    </body>
+</html>
