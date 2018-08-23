@@ -1,4 +1,5 @@
 <?php
+//@reference http://www.cnblogs.com/mafeifan/p/4322271.html
 class Event{
     
     public $listeners = []; 
