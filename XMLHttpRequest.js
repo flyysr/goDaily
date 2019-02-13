@@ -1,3 +1,19 @@
+3.跨域资源共享（CORS）
+XMLHttpRequest可以向不同域名的服务器发出HTTP请求，叫做CORS
+可以进行CORS有两个条件:
+1)浏览器要支持CORS
+2)服务器允许跨域：响应头需要添加一下选项
+
+self.set_header('Access-Control-Allow-Origin', '*')
+self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+self.set_header('Access-Control-Max-Age', 1000)
+self.set_header('Access-Control-Allow-Headers', '*')
+self.set_header('Content-type', 'application/json')
+1.什么是XMLHttpRequest 
+XMLHttpRequest是一个浏览器接口，使得Javascript可以进行HTTP(S)通信，这就是我们熟悉的AJAX。
+早期，各个浏览器的实现都不同，HTML5之后，W3C进行了统一。
+
+
 var xhr = new XMLHttpRequest();
     xhr.timeout = 3000;
     xhr.ontimeout = function (event) {
